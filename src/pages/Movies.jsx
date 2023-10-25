@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { AllMoviesData } from "../api";
 import Moviecard from "../components/Moviecard";
-import Btn from "../components/Btn";
 
 const Movies = () => {
 	const [moviesData, setMoviesData] = useState([]);
@@ -34,8 +33,8 @@ const Movies = () => {
 				</span>
 			</h1>
 			<div className="flex flex-wrap justify-center px-2">
-				{moviesData.map((upc) => (
-					<Moviecard key={upc.id} movie={upc} />
+				{moviesData.map((item) => (
+					<Moviecard key={item.id} movie={item} />
 				))}
 			</div>
 		</>
