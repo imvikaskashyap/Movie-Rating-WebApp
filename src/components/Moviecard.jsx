@@ -34,7 +34,8 @@ function Moviecard({ movie }) {
 		<div className="w-full text-white max-w-sm bg-white border border-gray-200 m-6 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 			<a href="#" className="m-auto">
 				<img
-					className="p-4 rounded-t-lg m-auto movie-poster"
+					className="p-4 rounded-t-lg m-auto movie-poster backdrop-blur-sm hover:backdrop-blur-lg"
+					style={{ opacity: "0.8" }}
 					src={movie.Poster || noimage}
 					alt="Movie poster"
 				/>
@@ -45,7 +46,11 @@ function Moviecard({ movie }) {
 				</h5>
 				<div className="flex items-center mt-2.5 mb-5 justify-between">
 					<div className="flex items-center justify-between">
-						<button onClick={handleDecrement}> - </button>
+						<button
+							className=" text-4xl text-red-600"
+							onClick={handleDecrement}>
+							-
+						</button>
 						{stars.map((_, index) => (
 							<span
 								key={index}
@@ -57,7 +62,12 @@ function Moviecard({ movie }) {
 								{index < localRating ? "★" : "☆"}{" "}
 							</span>
 						))}
-						<button onClick={handleIncrement}> + </button>
+						<button
+							className="text-4xl text-green-500"
+							onClick={handleIncrement}>
+							{" "}
+							+{" "}
+						</button>
 					</div>
 					<span className="bg-blue-100 text-blue-800 text-lg font-semibold mr-2 px-2.5 py-0.5 rounded dark-bg-blue-200 dark-text-blue-800 ml-3">
 						{localRating}
