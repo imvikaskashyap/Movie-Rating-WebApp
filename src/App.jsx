@@ -1,17 +1,21 @@
-import { Route, Routes } from "react-router-dom";
-import Movies from "./pages/Movies/Movies";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Movies from "./pages/Movies";
 import Header from "./components/Header";
-import MyQueue from "./pages/My-Queue/MyQueue";
+import MyQueue from "./pages/MyQueue";
+import Fav from "./pages/Fav";
 
 const App = () => {
 	return (
 		<>
-			<Header />
+			<BrowserRouter>
+				<Header />
 
-			<Routes>
-				<Route path="/" element={<Movies />} />
-				<Route path="/my-queue" element={<MyQueue />} />
-			</Routes>
+				<Routes>
+					<Route path="/" element={<Movies />} />
+					<Route path="/my-queue" element={<MyQueue />} />
+					<Route path="/fav" element={<Fav />} />
+				</Routes>
+			</BrowserRouter>
 		</>
 	);
 };

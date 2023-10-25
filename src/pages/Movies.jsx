@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { AllMovies } from "../../api";
-import Moviecard from "../../components/Moviecard";
-import Btn from "../../components/Btn";
+import { AllMovies } from "../api";
+import Moviecard from "../components/Moviecard";
+import Btn from "../components/Btn";
 
 const Movies = () => {
 	const [moviesData, setMoviesData] = useState([]);
@@ -11,9 +11,11 @@ const Movies = () => {
 	const fetchMoviesData = async () => {
 		try {
 			const res = await AllMovies();
-
-			setMoviesData(res.Search);
-			// console.log(res.data.Search);
+			const moviesWithRatings = res.Search.map((movie) => ({
+				...movie,
+				rating: 0, // Initial rating
+			}));
+			setMoviesData(moviesWithRatings);
 		} catch (error) {
 			console.error("Error fetching Movies data:", error);
 		}
