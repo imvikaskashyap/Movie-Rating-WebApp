@@ -1,22 +1,26 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 function Header() {
+	const navigate = useNavigate();
+
 	return (
 		<header
-			className="p-4 flex items-center justify-evenly position-sticky "
+			className="p-4 flex items-center justify-evenly top-0 sticky z-50"
 			style={{ backgroundColor: "#5e5d5d" }}>
-			<div className="container mx-auto ">
-				<h1 className="text-2xl font-bold text-white">
-					<NavLink to={"/"}>Movie Rating App</NavLink>
+			<div className="container mx-auto">
+				<h1
+					className="text-2xl font-bold text-white cursor-pointer"
+					onClick={() => navigate("/")}>
+					Movie Rating App
 				</h1>
 			</div>
-			<NavLink className="text-white" to="/all-movies">
+			<Link className="text-white no-underline w-20" to="/all-movies">
 				All Movies
-			</NavLink>
-			<NavLink className="text-white" to="/my-queue">
+			</Link>
+			<Link className="text-white no-underline w-20" to="/my-queue">
 				My Queue
-			</NavLink>
+			</Link>
 		</header>
 	);
 }

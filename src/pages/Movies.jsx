@@ -4,7 +4,9 @@ import Moviecard from "../components/Moviecard";
 
 const Movies = () => {
 	const [moviesData, setMoviesData] = useState([]);
-	console.log(moviesData);
+	const [isLoading, setIsLoading] = useState(true);
+
+	// console.log(moviesData);
 
 	// Fetch All Movies data using AllMovies API
 	const fetchMoviesData = async () => {
@@ -15,8 +17,10 @@ const Movies = () => {
 				rating: 0, // Initial rating
 			}));
 			setMoviesData(moviesWithRatings);
+			setIsLoading(false);
 		} catch (error) {
 			console.error("Error fetching Movies data:", error);
+			setIsLoading(false);
 		}
 	};
 
@@ -32,11 +36,17 @@ const Movies = () => {
 					Movies
 				</span>
 			</h1>
-			<div className="flex flex-wrap justify-center px-2">
-				{moviesData.map((item) => (
-					<Moviecard key={item.id} movie={item} />
-				))}
-			</div>
+			{isLoading ? (
+				<div className="text-center text-white text-2xl mt-16 font-semibold">
+					Loading...
+				</div>
+			) : (
+				<div className="flex flex-wrap justify-center px-2">
+					{moviesData.map((item) => (
+						<Moviecard key={item.id} movie={item} />
+					))}
+				</div>
+			)}
 		</>
 	);
 };

@@ -2,7 +2,7 @@ import React from "react";
 
 function AllMoviesCard({ movie }) {
 	return (
-		<div className="min-h-full my-20 mx-6  flex flex-col justify-center sm:py-12">
+		<div className="min-h-full my-20 mx-2 flex flex-col justify-center sm:py-12">
 			<div className="py-3 sm:max-w-xl sm:mx-auto">
 				<div className="shadow-lg border-gray-100 max-h-80 border sm:rounded-3xl p-8 flex space-x-8">
 					<div className="h-48 overflow-visible w-1/2">

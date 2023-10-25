@@ -4,7 +4,7 @@ import { AllMoviesData } from "../api";
 
 const AllMovies = () => {
 	const [moviesData, setMoviesData] = useState([]);
-	console.log(moviesData);
+	const [isLoading, setIsLoading] = useState(true);
 
 	// Fetch All Movies data using AllMovies API
 	const fetchMoviesData = async () => {
@@ -15,8 +15,10 @@ const AllMovies = () => {
 				rating: 0, // Initial rating
 			}));
 			setMoviesData(moviesWithRatings);
+			setIsLoading(false);
 		} catch (error) {
 			console.error("Error fetching Movies data:", error);
+			setIsLoading(false);
 		}
 	};
 
@@ -24,18 +26,25 @@ const AllMovies = () => {
 	useEffect(() => {
 		fetchMoviesData();
 	}, []);
+
 	return (
 		<>
-			<h1 class="mb-4 text-3xl text-center  mt-12 mb-12 font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
-				<span className="text-transparent  bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+			<h1 className="mb-4 text-3xl text-center mt-12 mb-12 font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
+				<span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
 					All Movies
 				</span>
 			</h1>
-			<div className="flex flex-wrap justify-center px-2">
-				{moviesData.map((upc) => (
-					<AllMoviesCard key={upc.id} movie={upc} />
-				))}
-			</div>
+			{isLoading ? (
+				<div className="text-center text-white text-2xl mt-16 font-semibold">
+					Loading...
+				</div>
+			) : (
+				<div className="flex flex-wrap justify-center px-2">
+					{moviesData.map((item) => (
+						<AllMoviesCard key={item.id} movie={item} />
+					))}
+				</div>
+			)}
 		</>
 	);
 };
