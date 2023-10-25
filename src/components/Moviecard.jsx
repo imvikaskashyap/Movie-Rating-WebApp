@@ -31,7 +31,7 @@ function Moviecard({ movie }) {
 	const stars = Array(5).fill(0);
 
 	return (
-		<div className="w-full text-white max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+		<div className="w-full text-white max-w-sm bg-white border border-gray-200 m-6 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 			<a href="#" className="m-auto">
 				<img
 					className="p-4 rounded-t-lg m-auto movie-poster"

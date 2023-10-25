@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const AllMovies = async () => {
+export const AllMoviesData = async () => {
 	try {
 		const response = await axios.get(`${import.meta.env.VITE_API_URL}`);
 		// console.log(response, "all movies");

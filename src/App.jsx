@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Movies from "./pages/Movies";
 import Header from "./components/Header";
 import MyQueue from "./pages/MyQueue";
-import Fav from "./pages/Fav";
+import AllMovies from "./pages/AllMovies";
 
 const App = () => {
 	return (
@@ -13,7 +13,7 @@ const App = () => {
 				<Routes>
 					<Route path="/" element={<Movies />} />
 					<Route path="/my-queue" element={<MyQueue />} />
-					<Route path="/fav" element={<Fav />} />
+					<Route path="/all-movies" element={<AllMovies />} />
 				</Routes>
 			</BrowserRouter>
 		</>
