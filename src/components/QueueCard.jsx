@@ -11,10 +11,10 @@ function QueueCard({ movie }) {
 	};
 
 	return (
-		<div className="w-80 text-white m-6 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+		<div className="w-80 text-white m-6 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 movie-card">
 			<a href="#" className="m-auto">
 				<img
-					className="p-4 rounded-t-lg m-auto movie-poster"
+					className="p-4 rounded-t-lg m-auto movie-poster img"
 					src={movie.Poster || noimage}
 					alt="Movie poster"
 				/>
