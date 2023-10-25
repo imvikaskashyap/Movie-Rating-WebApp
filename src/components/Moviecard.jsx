@@ -1,101 +1,66 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
-import noimage from "../assets/images/no-image.jpg";
-import { motion } from "framer-motion";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-import { toast } from "react-toastify";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { incRating, decRating } from "../redux/actions/index";
 import Btn from "./Btn";
-import "../index.css";
 
 function Moviecard({ movie }) {
-	const [isBookmarked, setIsBookmarked] = useState(null);
+	const dispatch = useDispatch();
+	const rating = useSelector((state) => state.handleRating);
+	console.log(rating);
 
-	useEffect(() => {
-		if (localStorage.getItem(movie.id)) {
-			setIsBookmarked(true);
-		} else {
-			setIsBookmarked(false);
-		}
-	}, [movie.id]);
-
-	const BookmarkMovie = () => {
-		if (!user) {
-			toast.info("To bookmark this movie, please log in.");
-		} else {
-			setIsBookmarked(!isBookmarked);
-			if (isBookmarked) {
-				localStorage.removeItem(movie.id);
-			} else {
-				localStorage.setItem(movie.id, JSON.stringify(movie));
-			}
-		}
-	};
+	// Create an array to represent stars
+	const stars = Array(5).fill(0);
 
 	return (
 		<>
-			<div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-				<a href="#">
+			<div className="w-full text-white max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+				<a href="#" className="m-auto">
 					<img
-						class="p-4 rounded-t-lg movie-poster"
+						className="p-4 rounded-t-lg m-auto movie-poster"
 						src={movie.Poster || noimage}
 						alt="Movie poster"
 					/>
 				</a>
-				<div class="px-5 pb-5">
-					<a href="#">
-						<h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-							{movie.Title}
-						</h5>
-					</a>
-					<div class="flex items-center mt-2.5 mb-5">
-						<svg
-							class="w-4 h-4 text-yellow-300 mr-1"
-							aria-hidden="true"
-							xmlns="http://www.w3.org/2000/svg"
-							fill="currentColor"
-							viewBox="0 0 22 20">
-							<path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-						</svg>
-						<svg
-							class="w-4 h-4 text-yellow-300 mr-1"
-							aria-hidden="true"
-							xmlns="http://www.w3.org/2000/svg"
-							fill="currentColor"
-							viewBox="0 0 22 20">
-							<path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-						</svg>
-						<svg
-							class="w-4 h-4 text-yellow-300 mr-1"
-							aria-hidden="true"
-							xmlns="http://www.w3.org/2000/svg"
-							fill="currentColor"
-							viewBox="0 0 22 20">
-							<path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-						</svg>
-						<svg
-							class="w-4 h-4 text-yellow-300 mr-1"
-							aria-hidden="true"
-							xmlns="http://www.w3.org/2000/svg"
-							fill="currentColor"
-							viewBox="0 0 22 20">
-							<path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-						</svg>
-						<svg
-							class="w-4 h-4 text-gray-200 dark:text-gray-600"
-							aria-hidden="true"
-							xmlns="http://www.w3.org/2000/svg"
-							fill="currentColor"
-							viewBox="0 0 22 20">
-							<path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-						</svg>
-						<span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">
-							5.0
+				<div className="px-5 pb-5">
+					<h5 className="text-xl font-semibold tracking-tight text-white dark-text-white">
+						{movie.Title}
+					</h5>
+					<div className="flex items-center mt-2.5 mb-5 justify-between">
+						<div className="flex items-center justify-between">
+							<button
+								className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+								onClick={() => {
+									dispatch(decRating());
+								}}>
+								{" "}
+								-{" "}
+							</button>
+							{stars.map((_, index) => (
+								<span
+									key={index}
+									className={`text-2xl m-2 ${
+										index < rating
+											? "text-yellow-300"
+											: "text-gray-200 dark-text-gray-600"
+									}`}>
+									{index < rating ? "★" : "☆"}{" "}
+									{/* ★ is a filled star, ☆ is an empty star */}
+								</span>
+							))}
+							<button
+								className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+								onClick={() => {
+									dispatch(incRating());
+								}}>
+								+
+							</button>
+						</div>
+						<span className="bg-blue-100 text-blue-800 text-lg font-semibold mr-2 px-2.5 py-0.5 rounded dark-bg-blue-200 dark-text-blue-800 ml-3">
+							{rating}
 						</span>
 					</div>
-					<div class="flex items-center justify-between">
-						<span class="text-3xl font-bold text-gray-900 dark:text-white">
+					<div className="flex items-center justify-between">
+						<span className="text-3xl font-bold dark-text-white">
 							Year: {movie.Year}
 						</span>
 						<Btn />

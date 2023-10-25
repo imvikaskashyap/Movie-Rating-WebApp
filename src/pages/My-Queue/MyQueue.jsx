@@ -1,7 +1,11 @@
 import React from "react";
 
 const MyQueue = () => {
-	return <div></div>;
+	return (
+		<div>
+			<p>Hiii this</p>
+		</div>
+	);
 };
 
 export default MyQueue;
