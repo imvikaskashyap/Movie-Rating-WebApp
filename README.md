@@ -14,6 +14,7 @@ Currently, two official plugins are available:
 <b>
 This project is an exciting Movie Rating and Queue App. It provides users with two core functionalities:
 <b>
+</br>
 <p>
 1. Movie Ratings: In this app, you can easily rate your favorite movies. Each movie is displayed elegantly, allowing you to give it a star rating from 0 to 5. This helps you keep track of the movies you love and discover new ones based on community ratings.
 </p>
