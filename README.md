@@ -16,7 +16,8 @@ This project is an exciting Movie Rating and Queue App. It provides users with t
 <b>
 <p>
 1. Movie Ratings: In this app, you can easily rate your favorite movies. Each movie is displayed elegantly, allowing you to give it a star rating from 0 to 5. This helps you keep track of the movies you love and discover new ones based on community ratings.
-
+</p>
+<p>
 2. Queue Management: The app includes a "Queue" feature that allows you to create a personalized list of movies you want to watch in the future. Just click the "Add to Queue" button on any movie card to build your collection of must-watch films.
 </p>
 
@@ -37,7 +38,7 @@ This project is an exciting Movie Rating and Queue App. It provides users with t
  <h2> Project Purpose</h2>
 
  <p>
-1. Rate movies and share their opinions.
+1. Rate movies and share their opinions. </br>
 2. Manage a personal movie queue for easy tracking and prioritization.
 
  </p>
