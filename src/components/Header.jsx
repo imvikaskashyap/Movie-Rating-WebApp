@@ -17,12 +17,12 @@ function Header() {
 					Movie Rating App
 				</h1>
 			</div>
-			<Link className="text-white no-underline " to="/all-movies">
+			<NavLink className="text-white no-underline " to="/all-movies">
 				All Movies
-			</Link>
-			<Link className="text-white no-underline " to="/my-queue">
+			</NavLink>
+			<NavLink className="text-white no-underline " to="/my-queue">
 				My Queue
-			</Link>
+			</NavLink>
 		</header>
 	);
 }

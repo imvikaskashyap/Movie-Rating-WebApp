@@ -4,7 +4,7 @@ import QueueCard from "../components/QueueCard";
 
 function MyQueue() {
 	const queue = useSelector((state) => state.handleQueue.queue);
-	console.log(queue);
+	// console.log(queue);
 
 	return (
 		<div>

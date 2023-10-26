@@ -6,6 +6,7 @@ import { removeFromQueue } from "../redux/actions";
 function QueueCard({ movie }) {
 	const dispatch = useDispatch();
 
+	// remove movie from queue
 	const removeFromTheQueue = (movie) => {
 		dispatch(removeFromQueue(movie));
 	};

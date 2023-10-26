@@ -12,7 +12,7 @@ const AllMovies = () => {
 			const res = await AllMoviesData();
 			const moviesWithRatings = res.Search.map((movie) => ({
 				...movie,
-				rating: 0, // Initial rating
+				rating: 0, // Initial rating (because movie data has no rating )
 			}));
 			setMoviesData(moviesWithRatings);
 			setIsLoading(false);

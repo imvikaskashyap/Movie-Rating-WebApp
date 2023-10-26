@@ -7,10 +7,10 @@ import { addToQueue } from "../redux/actions/index";
 function Moviecard({ movie }) {
 	const dispatch = useDispatch();
 	const [localRating, setLocalRating] = useState(movie.rating);
-	const rating = useSelector((state) => state.handleRating);
 	const [addedToQueue, setAddedToQueue] = useState(false);
 	const [isShown, setIsShown] = useState(false);
 
+	// adding the movie to queue
 	const addMovieToQueue = (movie) => {
 		if (!addedToQueue) {
 			dispatch(addToQueue(movie));
@@ -21,6 +21,7 @@ function Moviecard({ movie }) {
 		}
 	};
 
+	// rating star decrement function
 	const handleDecrement = () => {
 		if (localRating > 0) {
 			dispatch(decRating(movie));
@@ -28,6 +29,7 @@ function Moviecard({ movie }) {
 		}
 	};
 
+	// rating star increment function
 	const handleIncrement = () => {
 		if (localRating < 5) {
 			dispatch(incRating(movie));

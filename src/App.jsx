@@ -9,7 +9,6 @@ const App = () => {
 		<>
 			<BrowserRouter>
 				<Header />
-
 				<Routes>
 					<Route path="/" element={<Movies />} />
 					<Route path="/my-queue" element={<MyQueue />} />
