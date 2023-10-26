@@ -9,14 +9,6 @@ Currently, two official plugins are available:
 
 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 
-<h1>Template Example </h1>
-
-https://github.com/jayeshchauhan8954/projectManagementApplication/assets/115231608/e7c8bf11-e706-41bd-8d89-38603ca9778b
-
-https://github.com/jayeshchauhan8954/projectManagementApplication/assets/115231608/89569502-f4dc-4bb8-972b-950601fb36d0
-
-https://github.com/jayeshchauhan8954/projectManagementApplication/assets/115231608/657abd2b-0190-4a0d-b582-dd462b39bca9
-
  <h1> Introduction </h1>
 <h2><i class="uil uil-eye"></i> Project Overview</h2>
 <b>
@@ -50,8 +42,7 @@ This project is an exciting Movie Rating and Queue App. It provides users with t
 
  </p>
 
-<h1><i class="uil uil-react"></i> Getting Started with npm create vite@latest my-project -- --template react </h1>
-This project was bootstrapped with npm create vite@latest my-project -- --template react.
+<h3><i class="uil uil-react"></i> Getting Started with npm create vite@latest my-project -- --template react </h3>
 
 <h2> Available Scripts </h2>
 In the project directory, you can run:
@@ -94,19 +85,13 @@ To learn Vite, check out the VIte documentation.
 This section has moved here: https://tailwindcss.com/docs/guides/vite
 
 Analyzing the Bundle Size
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-Making a Progressive Web App
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-Advanced Configuration
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+This section has moved here: https://dev.to/heruujoko_38/analyzing-and-improving-bundle-size-4n6m
 
 Deployment
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+This section has moved here: https://vitejs.dev/guide/static-deploy.html
 
 npm run build fails to minify
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This section has moved here: https://vitejs.dev/guide/build.html
 
 <h3> <i class="uil uil-phone"></i> Contact  </h3>
 
